@@ -216,6 +216,12 @@ li.dropdown, li.dropdown1  {                                                /*--
 
 /*--------------------------------------------END---------------------BODY CONTAINER-(HOME PAGE)----------------------END----------------------------------------------*/
 
+iframe{                                                                 /* <-- defines the size and position of iframe. */
+  padding-left: 9px;
+  width: 98%;
+  height: 400px;
+}
+
 /*---------------------------START-------------------GALLERY CONTAINER AND GALLERY-(HOME PAGE AND ARTISTS PAGE)--------------------START-------------------------------*/
 
 .gallery-container{                                                    /* <-- contains 4 columns of the same width and height. */
@@ -440,38 +446,39 @@ form > h1{                                                              /* <-- d
   text-align: center;
   z-index: 1;
   opacity: 0;                                                           /* <-- adds fade-in effect. */
-  transition: opacity 200ms;
+  transition: opacity 200ms;                                            /* <-- smooth fade on opacity change. */
 }
 
-.image h1{
-  margin: 0 0 30px 0;
+.image h1{      
+  font-size: 20px;                                                      /* <-- styles the paragraph inside. */
+  margin: 0 0 30px 0; 
   color: white;
   z-index: 1;
-  opacity: 0;
-  transition: opacity 200ms;
+  opacity: 0;                                                           /* <-- adds fade-in effect. */
+  transition: opacity 200ms;                                            /* <-- smooth fade on opacity change. */
 }
 
 .image::before{
-  content:'';
+  content:'';                                                           /* <-- creates an empty pseudo-element. */
   position: absolute;
   opacity: 0;
   background-color: #000000;
   top: 0;
   bottom: 0;
   right: 0;
-  left: 0;
-  transition: opacity 200ms;
+  left: 0;                                                              /* <-- stretches to cover entire .image element. */
+  transition: opacity 200ms;                                            /* <-- smooth fade on opacity change. */
 }
 
-.image:hover h1, .image:hover p{
+.image:hover h1, .image:hover p{                                        /* <-- makes text fully visible when hovered. */  
 opacity: 1;
 }
 
-.image:hover::before{
+.image:hover::before{                                                   /* <-- makes the dark overlay semi-visible when hovered. */     
   opacity:0.5;
 }
 
-.image:hover{
+.image:hover{                                                           /* <-- slightly scales the image on hover. */
   transform: scale(1.05);
 }
 
@@ -524,37 +531,34 @@ opacity: 1;
   background-image: url("../images/Image-Chagall_Fiddler.jpg");
 }
 
-@media (hover:none){
-  image::before{
-    opacity: 0.5;
+@media (hover:none){                                        /* <--  since the opacity is hoverable and the user cannot hover from a phone it adjusts the opacity and text */
+  .image::before{
+    opacity: 0.5;                                           /* <-- shows the dark overlay background. */
   }
 
   .image h1, .image p{
-      opacity: 1;
+    opacity: 1;                                             /* <-- makes the text always visible. */
   }
 }
 
-/*--------------------------START------------------------------------ART CONTAINER-(VGART PAGE)-----------------------------------------START-------------------------*/
+/*--------------------------END--------------------------------------ART CONTAINER-(VGART PAGE)-----------------------------------------END---------------------------*/
+
+/*--------------------------START------------------------------------------FOOTER-(GLOBAL)----------------------------------------------START-------------------------*/
 
 .footer-row{
-  grid-row: 1;
+  grid-row: 1;                                              /* <-- places the footer in the first row of the grid layout. */
 }
 
-footer{
+footer{                                                     /* <-- defines the appearance and position of the footer. */
   background-color: #000000;
   padding: 20px;
   font-weight: 400;
 }
 
-footer > p{
+footer > p{                                                 /* <-- defines the appearance and position of the footer. */
 text-align: center;  
 font-size: 14px;
 color: white;
 }
 
-iframe{
-  padding-left: 9px;
-  width: 98%;
-  height: 400px;
-}
-
+/*--------------------------END--------------------------------------------FOOTER-(GLOBAL)------------------------------------------------END-------------------------*/
