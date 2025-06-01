@@ -316,7 +316,7 @@ div.gallery:hover {                                                    /* <-- de
 
 /*-----------------------------END---------------------------------LOCATION CONTAINER-(LOCATION PAGE)-------------------------------------END--------------------------*/
 
-/*---------------------------START---------------------------------CONTACT CONTAINERS-(LOCATION PAGE)------------------------------------START------------------------*/
+/*---------------------------START----------------------------------CONTACT CONTAINERS-(CONTACT PAGE)-------------------------------------START------------------------*/
 
 .contact-container{                                                     /* <-- contains 4 columns of the same width and height. */
   display: grid;
@@ -325,7 +325,44 @@ div.gallery:hover {                                                    /* <-- de
   padding-top:8px;                                                                            /* if the screen is narrow it automatically adjusts the number of columns). */
 }
 
-input[type=text]{                 /*form*/
+.fa-square-facebook{                                                    /* <-- position and appearance of the icons. */
+  font-size: 40px;
+  padding-left: 65px;
+}
+
+.fa-square-instagram,                                                   /* <-- position and appearance of the icons. */
+.fa-square-x-twitter,
+.fa-linkedin{
+  font-size: 40px;
+  padding-left: 10px;
+}
+
+.social_link:link {                                                     /* <-- defines the color and appearance of the link. */
+  color:black;
+  text-decoration: none;
+}
+
+.social_link:visited {                                                  /* <-- defines the color and appearance of the link when not clicked/default. */
+  text-decoration: none;
+  color:black;
+}
+
+.social_link:hover {                                                    /* <-- defines the color and appearance of the link when hovered uppon. */                 
+  color:#3a3838;
+}
+
+.social_link:active {                                                   /* <-- defines the color and appearance of the link when it's being clicked. */      
+  text-decoration: none;
+}   
+
+.contact_columns{                                                       /*--------------FORM----------------*/
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));          /* <-- contains 2 columns of the same width and height. */
+  grid-template-rows: 0 400px;                                          /* <-- defines the height of the rows. */                     
+  padding-top:8px;
+}
+
+input[type=text]{                                                       /*<-- styles all text input fields: full width, padding, margin, border, and rounded corners. */
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -334,7 +371,7 @@ input[type=text]{                 /*form*/
   border-radius: 10px;
 }
 
-input[type=submit] {
+input[type=submit] {                                                    /* <-- styles the submit button. */
   width: 100%;
   background-color: black;
   color: white;
@@ -345,28 +382,21 @@ input[type=submit] {
   cursor: pointer;
 }
 
-input[type=submit]:hover {
+input[type=submit]:hover {                                              /* <-- defines the background color of the link when hovered uppon. */                                
   background-color: #424242;
 }
 
 div > form{
-  border-radius: 5px;
-  overflow: auto;
+  border-radius: 5px;                                                   /* <-- rounds the corners of the form. */
+  overflow: auto;                                                       /* <-- adds scrollbars only if needed. */
 }                   
 
-form > h1{
+form > h1{                                                              /* <-- defines the position of h1. */
   text-align:center;
   padding-bottom:12px;
 }
 
-.contact_columns{
-  display: grid;
- grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-    grid-template-rows: 0 400px  ;
-  padding-top:8px;
-}
-
-.contact-image{
+.contact-image{                                                         /* <-- defines the size and position on th econtact-image */
   padding-top: 40px;
   padding-left: 60px;
   width: 80%;
@@ -375,69 +405,41 @@ form > h1{
 
 .form-column{
   padding-left: 10px;
-
 }
-                                    /*end form*/
-/*----------------------------------------------------------------------------------------------------------------------------------*/
- 
+/*---------------------------END-----------------------------------CONTACT CONTAINERS-(CONTACT PAGE)-------------------------------------END--------------------------*/
 
+/*--------------------------START------------------------------------ART CONTAINER-(VGART PAGE)-----------------------------------------START-------------------------*/
 
-
-
-/*----------------------------------------------------------------------------------------------------------------------------------*/
-
-    
-
-/*----------------------------------------------------------------------------------------------------------------------------------*/
-
-.social_link:link {
-  color:black;
-  text-decoration: none;
-}
-
-.social_link:visited {
-  text-decoration: none;
-  color:black;
-}
-
-.social_link:hover {
-  color:#3a3838;
-}
-
-.social_link:active {
-  text-decoration: none;
-}                                       /*end contact info*/
-
-
-.main-container {
-  padding: 50px;
-  display: grid;
+.main-container {                                                        /* <-- creates a responsive grid layout with columns that are at least 300px wide, */
+  padding: 50px;                                                         /* the number of columns adjusts based on container width, */
+  display: grid;                                                         /* each row is 350px tall, and there's a 30px gap between items. */
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-auto-rows: 350px;
   gap: 30px;
   justify-content: center;
 }
 
-.image{
+.image{                                                                 /* <-- styles a container with a full-size centered background image. */
   width: 100%;
   height: 100%;
-  background-size: cover;
+  background-size: cover;                                               /* <-- scales background image to cover the container. */
   background-position: center;
-  display: flex;
+  display: flex;                                                        /* <-- uses flexbox for inner content. */
   justify-content:center;
   align-items: center;
-  flex-direction: column;
-  position: relative;
+  flex-direction: column;                                               /* <-- stack inner elements vertically. */
+  position: relative;                                                   /* <-- Allows absolute positioning inside this container. */
   overflow: hidden;
 }
 
-.image p{
+.image p{                                                               /* <-- styles the paragraph inside. */
   margin: 0;
+  font-size: 15px;
   padding: 0 40px 0 40px;
   color: white;
   text-align: center;
   z-index: 1;
-  opacity: 0;
+  opacity: 0;                                                           /* <-- adds fade-in effect. */
   transition: opacity 200ms;
 }
 
@@ -532,29 +534,7 @@ opacity: 1;
   }
 }
 
-.fa-square-facebook{
-  font-size: 40px;
-  padding-left: 65px;
-}
-
-.fa-square-instagram{
-  font-size: 40px;
-  padding-left: 10px;
-}
-
-.fa-square-x-twitter{
-  font-size: 40px;
-  padding-left: 10px;
-}
-
-.fa-linkedin{
-  font-size: 40px;
-  padding-left: 10px;
-}
-
-.fa-brands:hover {
-  opacity: 0.7;
-}
+/*--------------------------START------------------------------------ART CONTAINER-(VGART PAGE)-----------------------------------------START-------------------------*/
 
 .footer-row{
   grid-row: 1;
