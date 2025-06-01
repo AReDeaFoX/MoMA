@@ -1,0 +1,580 @@
+@media screen and (max-width: 600px) {
+  .contact-image-column {
+    display: none;
+  }
+}
+
+/*--------------------------------------------START-----------------------GLOBAL VARIABLES---------------------START-----------------------------------------------*/
+
+*{                              /* <-- uses the variable * to make the font family of the whole css sans-serif. */
+  font-family:sans-serif;
+}
+
+html {                         
+  scroll-behavior: smooth;      /* <-- enables smooth scrolling animation when the page is scrolled via anchor links. */
+}
+
+body{                          
+  background-color:white;
+  font-size: medium;
+  margin: 0;
+}
+
+h1{
+  text-align:center;
+}
+
+h2{
+  text-align:center;
+}
+
+h5{
+  text-align: center;
+}
+
+p{
+  text-align:left;
+  font-size: 18px;
+}
+
+.center{
+  text-align: center;
+}
+
+/*--------------------------------------------END--------------------------GLOBAL VARIABLES---------------------------END-----------------------------------------------*/
+
+/*--------------------------------------------START----------------------STICKY-HEADER-(GLOBAL)---------------------START-----------------------------------------------*/
+
+header {                        
+  position: sticky;                  /* <-- makes the header stick on top when scrolling. */                
+  top: 0;
+  padding: 2px;
+  background:black;
+  color: #f1f1f1;
+  z-index: 10;                       /* <-- controls the stacking order of elements on the z-axis (front to back), work well with the sticky variable. */
+}
+
+.top:link {                          /* <-- defines the color of the link (top = on click trasfers you to the start of the page) when not clicked/default, */
+  color:white;                     /* and the decoration (if it will be underlined in this situation because it's a link). */
+  text-decoration: none;
+}
+
+.top:visited {                       /* <-- defines the color of the link when clicked. */
+  color:white;
+}
+
+.top:hover {                         /* <-- defines the color of the link when hovered upon. */
+  color:#dadada;
+}
+
+.top:active {                        /* <-- defines the decoration of the link when it's being clicked. */
+  text-decoration: none;
+} 
+
+/*--------------------------------------------END-----------------------STICKY HEADER-(GLOBAL)------------------------END-----------------------------------------------*/
+
+/*--------------------------------------------START------------------MENU WITH DROPDOWNS(GLOBAL)---------------------START----------------------------------------------*/
+
+ul {                                        /* <-- navigation menu. */ 
+  list-style-type: none;                    /* <-- removes bullet points from the list items. */
+  margin: 0px;                              /* <-- removes default margin. */
+  padding: 2px;
+  overflow: hidden;                         /* <-- hides any content that overflows the bounds of an element. */
+  background-color: black;
+}
+
+li {
+  float: left;                              /* <-- makes the list (menu) horizontal. */
+}
+
+li a {                                      /* <-- defines the  appearance of all the a's inside li. */
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.a_menu:link {                              /* <-- defines the color and decoration (removes default underline) of all the  */
+  color:white;                            /* a_menu links inside li (on click transfers you to other pages) when not clicked/default. */
+  text-decoration: none;
+}
+
+.a_menu:visited {                           /* <-- defines the color and appearance of all the a_menu links when visited  */
+  text-decoration: none;
+  color:white;
+}
+
+.a_menu:hover {                             /* <-- defines the text and background color of the link when hovered upon. */
+  color:#3a3838;
+  background-color: white;
+}
+
+.a_menu:active {                            /* <-- defines the decoration of the link when it's being clicked. */
+  text-decoration: none;
+} 
+
+
+li.dropdown, li.dropdown1  {                                                /*--------DROPDOWNS-------*/
+  display: inline-block;                                      /* <-- makes the element flow inline (like text). */
+}
+
+.dropdown-content, .dropdown-content1{
+  display: none;                                              /* <-- hides the dropdown by default. */
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);             /* <-- adds a subtle shadow for a dropdown "popup" effect. */
+  z-index: 1;                                                 /* <-- ensures the dropdown appears above other content.*/
+} 
+
+.dropdown-content a, .dropdown-content1 a{                    /* <-- defines the appearance of all the a's inside the dropdown_contents. */
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover, .dropdown-content1 a:hover{        /* <-- defines the hover effect of the dropdowns (subtle gray background color). */
+  background-color: #f1f1f1;
+    display: block;
+}
+
+.dropdown:hover .dropdown-content,                            /* <-- makes the dropdown menu appear when hovered uppon. */
+.dropdown1:hover .dropdown-content1{
+  display: block;
+}
+
+/*--------------------------------------------END----------------------MENU AND DROPDOWNS-(GLOBAL)---------------------END----------------------------------------------*/
+
+/*--------------------------------------------START----------------------HERO IMAGE-(HOME PAGE)---------------------START-----------------------------------------------*/
+
+.hero-image {
+  background-image: url("../images/artistic-948588_1280.jpg");  
+  background-color: #cccccc;
+  height: 500px;
+  background-position: center;        /* <-- positions the background photo on the center. */
+  background-repeat: no-repeat;
+  background-size: cover;             /* <-- covers the whole column with the background photo. */
+  position: relative;                 /* <-- positions it relative to its normal position in the document flow. */
+  overflow: hidden;                   /* <-- hides any content that overflows the bounds of an element. */
+}
+
+.front-text {                         /* <-- front text of the hero image. */              
+  text-align: center;
+  position: absolute;                 /* <-- removes the text from the normal document flow and positions it relative to the nearest positioned ancestor. */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);   /* <-- moves an element along the X and Y axes by 50% of its own width and height. */
+  color: white;
+}
+
+.see_more {                           /*  <-- see more button. */
+  border-radius: 10px;                /*  <-- round edges. */              
+  background-color: black; 
+  color: white;
+  padding:  10px 4px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;              /* <-- flows with text and other inline elements horizontally (on the same line) */
+  font-size: 16px;                    /* /defined it as an inline_block so it can behave like a block and have width, height, -padding-, and -margin- applied. */
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.see_more:hover{                      /*  <-- see_more button hover effect - defines the text and background color of the link when hovered upon. */            
+  background-color: white;
+  color:black;
+}                               
+
+/*--------------------------------------------END----------------------HERO IMAGE-(HOME PAGE)------------------------END-----------------------------------------------*/
+
+/*--------------------------------------------START-------------------BODY CONTAINER-(HOME PAGE)----------------------START--------------------------------------------*/
+
+.container {                                                            /* <-- creates a container with two columns. */
+  display: grid;
+  grid-template-columns: 25% 70%;                                       /* <-- defines the width of every column (left and right). */
+  column-gap: 16px;                                                     /* <-- defines the gap between the columns. */
+}
+
+.left{
+  color:white;
+  background-image: url("../images/artistic-948582_1920.jpg");
+  width: 100%;
+  height:100%;
+  background-size: cover;                                               /* <-- covers the whole column with the background photo. */
+  background-position: center;                                          /* <-- positions it on the center. */
+  position: relative;                                                   /* <-- positions it relative to its normal position in the document flow. */
+  overflow:hidden;                                                      /* <-- hides any content that overflows the bounds of an element. */
+  grid-column: 1;                                                       /* <-- specifies where the left column should start on the grid's columns. */
+}
+
+.right{                                                                 /* <-- right column. */
+  grid-column: 2;                                                       /* <-- specifies where the right column should start on the grid's columns. */
+}
+
+/*--------------------------------------------END---------------------BODY CONTAINER-(HOME PAGE)----------------------END----------------------------------------------*/
+
+/*---------------------------START-------------------GALLERY CONTAINER AND GALLERY-(HOME PAGE AND ARTISTS PAGE)--------------------START-------------------------------*/
+
+.gallery-container{                                                    /* <-- contains 4 columns of the same width and height. */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));         /* <-- makes the whole container responsive (creates columns that are at least 300px wide, */
+  width: 100%;                                                                                  /* columns will expand evenly to fill the container, */
+  height: 98%;                                                                                  /* if the screen is narrow it automatically adjusts the number of columns). */
+  padding-top:8px;
+}
+
+div.gallery {                                                          /* <-- adds decoration to all <div> elements with the class gallery */
+  margin: 15px;
+  border: 1px solid #e6e6e6;
+  width: 292px;
+}
+
+div.gallery img {                                                      /* <-- defines the size the image. */
+  width: 100%;
+  height: 300px;
+}
+
+div.desc {                                                             /* <-- position of description. */
+  padding: 15px;
+  text-align: center;
+}
+
+div.gallery:hover {                                                    /* <-- defines the hover effect of the gallery */
+  border: 1px solid #b4b4b4;                                         /* (when hovered uppon the element the border changes color and haw an opacity of 0.9). */
+  opacity: 0.9;
+}
+
+/*--------------------------END---------------------GALLERY CONTAINER AND GALLERY-(HOME PAGE AND ARTISTS PAGE)----------------------END-------------------------------*/
+
+/*---------------------------START-----------------------------ARTISTS CONTAINER-(ARTISTS PAGE)------------------------------------START------------------------------*/
+
+.artists_container{                                                     /* <-- contains 2 columns of the same width and height. */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));          /* <-- makes the whole container responsive (creates columns that are at least 300px wide, */
+  column-gap: 16px;                                                                            /* columns will expand evenly to fill the container, */
+}                                                                                              /* if the screen is narrow it automatically adjusts the number of columns). */
+
+.artists_image{                                                         /* <-- position and appearance of the image. */                  
+  border-radius: 10px;
+  margin-top: 10px;
+  color:white;
+  width: 100%;
+  height: auto;
+}
+
+.artists_h1{
+  text-align: left;
+}
+
+.artists_p{
+  font-size: 22px;
+}
+
+.signature{                                                             /* <-- position and appearance of the signature image. */
+  padding-left: 30px;
+  width: 120px;
+  height: 40px;
+}
+/*-----------------------------END--------------------------------ARTISTS CONTAINER-(ARTISTS PAGE)----------------------------------END-------------------------------*/
+
+/*---------------------------START-----------------------------HIGHLIGHTS CONTAINER-(HIGHLIGHTS PAGE)------------------------------------START------------------------*/
+
+.highlights_container{                                                  /* <-- contains 3 columns of the same width and height. */
+  display: grid;                            
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));          /* <-- makes the whole container responsive (creates columns that are at least 300px wide, */
+}                                                                                             /* columns will expand evenly to fill the container, */
+                                                                                              /* if the screen is narrow it automatically adjusts the number of columns). */
+.highlights_img{                                                        /* <-- position and size of the highlights image. */
+  padding-top: 8px;
+  width: 100%;
+  height: auto;
+}
+
+.image_footer{                                                          /* <-- position and size of the highlights footer text. */
+   text-align: center;
+   font-size: small;
+}
+
+/*-----------------------------END--------------------------------HIGHLIGHTS CONTAINER-(HIGHLIGHTS PAGE)----------------------------------END-------------------------*/
+
+/*---------------------------START---------------------------------LOCATION CONTAINER-(LOCATION PAGE)------------------------------------START------------------------*/
+
+.location-container, #map{                                              /* <-- contains 3 columns of the same width and height. */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));          /* <-- makes the whole container responsive (creates columns that are at least 100px wide, */
+  grid-template-rows: 425px;      /*<-- defines the height of the rows. */                  /* columns will expand evenly to fill the container, */
+  padding-top:8px;                                                                          /* if the screen is narrow it automatically adjusts the number of columns). */
+  padding-right: 6px;
+}
+.left-text{                                                             /* <-- position and size of the left text. */
+  text-align: left;
+  padding-left: 16px;
+}
+
+/*-----------------------------END---------------------------------LOCATION CONTAINER-(LOCATION PAGE)-------------------------------------END--------------------------*/
+
+/*---------------------------START---------------------------------CONTACT CONTAINERS-(LOCATION PAGE)------------------------------------START------------------------*/
+
+.contact-container{                                                     /* <-- contains 4 columns of the same width and height. */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));          /* <-- makes the whole container responsive (creates columns that are at least 300px wide, */
+  grid-template-rows: 170px ;   /*<-- defines the height of the rows. */                      /* columns will expand evenly to fill the container, */
+  padding-top:8px;                                                                            /* if the screen is narrow it automatically adjusts the number of columns). */
+}
+
+input[type=text]{                 /*form*/
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  border-radius: 10px;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: black;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #424242;
+}
+
+div > form{
+  border-radius: 5px;
+  overflow: auto;
+}                   
+
+form > h1{
+  text-align:center;
+  padding-bottom:12px;
+}
+
+.contact_columns{
+  display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-template-rows: 0 400px  ;
+  padding-top:8px;
+}
+
+.contact-image{
+  padding-top: 40px;
+  padding-left: 60px;
+  width: 80%;
+  height: auto;
+}
+
+.form-column{
+  padding-left: 10px;
+
+}
+                                    /*end form*/
+/*----------------------------------------------------------------------------------------------------------------------------------*/
+ 
+
+
+
+
+/*----------------------------------------------------------------------------------------------------------------------------------*/
+
+    
+
+/*----------------------------------------------------------------------------------------------------------------------------------*/
+
+.social_link:link {
+  color:black;
+  text-decoration: none;
+}
+
+.social_link:visited {
+  text-decoration: none;
+  color:black;
+}
+
+.social_link:hover {
+  color:#3a3838;
+}
+
+.social_link:active {
+  text-decoration: none;
+}                                       /*end contact info*/
+
+
+.main-container {
+  padding: 50px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-auto-rows: 350px;
+  gap: 30px;
+  justify-content: center;
+}
+
+.image{
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+.image p{
+  margin: 0;
+  padding: 0 40px 0 40px;
+  color: white;
+  text-align: center;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 200ms;
+}
+
+.image h1{
+  margin: 0 0 30px 0;
+  color: white;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 200ms;
+}
+
+.image::before{
+  content:'';
+  position: absolute;
+  opacity: 0;
+  background-color: #000000;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  transition: opacity 200ms;
+}
+
+.image:hover h1, .image:hover p{
+opacity: 1;
+}
+
+.image:hover::before{
+  opacity:0.5;
+}
+
+.image:hover{
+  transform: scale(1.05);
+}
+
+#image1{
+  background-image: url("../images/2728px-Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg");
+}
+#image2{
+  background-image: url("../images/Van_Gogh_The_Olive_Trees..jpg");
+}
+#image3{
+  background-image: url("../images/Vincent_van_Gogh_-_Portret_van_de_postbode_Joseph_Roulin.jpg");
+}
+#image4{
+  background-image: url("../images/Vincent_van_Gogh_-_Sorrow.jpg");
+}
+#image5{
+  background-image: url("../images/Pablo_Picasso,_1910,_Girl_with_a_Mandolin_(Fanny_Tellier),_oil_on_canvas,_100.3_x_73.6_cm,_Museum_of_Modern_Art_New_York..jpg");
+}
+#image6{
+  background-image: url("../images/Boy_Leading_a_Horse.jpg");
+}
+#image7{
+  background-image: url("../images/Picasso_three_musicians_moma_2006.jpg");
+}
+#image8{
+  background-image: url("../images/Les_Demoiselles_d'Avignon.jpg");
+}
+#image9{
+  background-image: url("../images/2703px-Surprised-Rousseau.jpg");
+}
+#image10{
+  background-image: url("../images/1586px-Henri_Rousseau_-_Le_Rêve_-_Google_Art_Project.jpg");
+}
+#image11{
+  background-image: url("../images/1690px-La_Bohémienne_endormie.jpg");
+}
+#image12{
+  background-image: url("../images/1629px-Rousseau-Hungry-Lion.jpg");
+}
+#image13{
+  background-image: url("../images/Chagall_IandTheVillage.jpg");
+}
+#image14{
+  background-image: url("../images/Marc_Chagall,_1912,_Calvary_(Golgotha)_Christus_gewidmet,_oil_on_canvas,_174.6_x_192.4_cm,_Museum_of_Modern_Art,_New_York.jpg");
+}
+#image15{
+  background-image: url("../images/1529px-Marc_Chagall,_1911-12,_The_Drunkard_(Le_saoul),_1912,_oil_on_canvas._85_x_115_cm._Private_collection.jpg");
+}
+#image16{
+  background-image: url("../images/Image-Chagall_Fiddler.jpg");
+}
+
+@media (hover:none){
+  image::before{
+    opacity: 0.5;
+  }
+
+  .image h1, .image p{
+      opacity: 1;
+  }
+}
+
+.fa-square-facebook{
+  font-size: 40px;
+  padding-left: 65px;
+}
+
+.fa-square-instagram{
+  font-size: 40px;
+  padding-left: 10px;
+}
+
+.fa-square-x-twitter{
+  font-size: 40px;
+  padding-left: 10px;
+}
+
+.fa-linkedin{
+  font-size: 40px;
+  padding-left: 10px;
+}
+
+.fa-brands:hover {
+  opacity: 0.7;
+}
+
+.footer-row{
+  grid-row: 1;
+}
+
+footer{
+  background-color: #000000;
+  padding: 20px;
+  font-weight: 400;
+}
+
+footer > p{
+text-align: center;  
+font-size: 14px;
+color: white;
+}
+
+iframe{
+  padding-left: 9px;
+  width: 98%;
+  height: 400px;
+}
+
