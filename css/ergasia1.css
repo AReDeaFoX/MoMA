@@ -1,9 +1,3 @@
-@media screen and (max-width: 600px) {
-  .contact-image-column {
-    display: none;
-  }
-}
-
 /*--------------------------------------------START-----------------------GLOBAL VARIABLES---------------------START-----------------------------------------------*/
 
 *{                              /* <-- uses the variable * to make the font family of the whole css sans-serif. */
@@ -400,6 +394,12 @@ div > form{
 form > h1{                                                              /* <-- defines the position of h1. */
   text-align:center;
   padding-bottom:12px;
+}
+
+@media screen and (max-width: 600px) {      /* <-- the contact image disappears after a certain width. */
+  .contact-image-column {
+    display: none;
+  }
 }
 
 .contact-image{                                                         /* <-- defines the size and position on th econtact-image */
